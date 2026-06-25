@@ -1,0 +1,21 @@
+-- Create Person Table
+
+CREATE TABLE Person_email (
+    Id INT PRIMARY KEY,
+    Email VARCHAR(100)
+);
+
+-- Insert Sample Data
+
+INSERT INTO Person_email (Id, Email)
+VALUES
+(1, 'a@b.com'),
+(2, 'c@d.com'),
+(3, 'a@b.com');
+
+
+SOLUTION:
+select email
+from Person_email
+group by email
+having count(*) >1
