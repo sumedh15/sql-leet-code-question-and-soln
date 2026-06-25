@@ -32,3 +32,16 @@ SELECT
 FROM Person p
 LEFT JOIN Address a
 ON p.PersonId = a.PersonId;
+
+
+Solution:
+
+select 
+p.FirstNAME,
+P.LastName,
+a.City,
+a.State
+
+from person as p
+left join address as a
+on p.PersonId = a.PersonId
