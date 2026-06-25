@@ -1,0 +1,47 @@
+CREATE TABLE Person (
+    PersonId INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50)
+);
+
+CREATE TABLE Address (
+    AddressId INT PRIMARY KEY,
+    PersonId INT,
+    City VARCHAR(50),
+    State VARCHAR(50)
+);
+
+INSERT INTO Person (PersonId, FirstName, LastName)
+VALUES
+(1, 'John', 'Doe'),
+(2, 'Jane', 'Smith'),
+(3, 'Mike', 'Johnson'),
+(4, 'Emily', 'Brown');
+
+INSERT INTO Address (AddressId, PersonId, City, State)
+VALUES
+(101, 1, 'New York', 'NY'),
+(102, 2, 'Los Angeles', 'CA'),
+(103, 4, 'Chicago', 'IL');
+
+SELECT
+    p.FirstName,
+    p.LastName,
+    a.City,
+    a.State
+FROM Person p
+LEFT JOIN Address a
+ON p.PersonId = a.PersonId;
+
+
+Solution:
+
+select 
+p.FirstNAME,
+P.LastName,
+a.City,
+a.State
+
+from person as p
+left join address as a
+on p.PersonId = a.PersonId
