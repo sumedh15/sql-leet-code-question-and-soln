@@ -1,0 +1,24 @@
+-- Create Weather Table
+
+CREATE TABLE Weather (
+    Id INT PRIMARY KEY,
+    RecordDate DATE,
+    Temperature INT
+);
+
+-- Insert Sample Data
+
+INSERT INTO Weather (Id, RecordDate, Temperature)
+VALUES
+(1, '2015-01-01', 10),
+(2, '2015-01-02', 25),
+(3, '2015-01-03', 20),
+(4, '2015-01-04', 30);
+
+SOLUTION:
+SELECT
+    w1.Id
+FROM Weather w1
+INNER JOIN Weather w2
+    ON w1.RecordDate = DATEADD(DAY, 1, w2.RecordDate)
+WHERE w1.Temperature > w2.Temperature;
