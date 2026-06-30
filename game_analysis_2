@@ -27,3 +27,8 @@ row_number() over (partition by player_id order by event_date) as r
 from activity
 ) lk
 where r = 1
+
+----
+select player_id, min(event_date) as first_date
+from activity
+group by player_id
